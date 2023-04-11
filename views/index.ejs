@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restorant Application</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.theme.default.min.css"> -->
+</head>
+<body>
+    <!-- HEADER START -->
+        <%- include('partials/header.ejs'); %>
+    <!-- HEADER END -->
+    <main class="main-content">
+        <!-- <div class="hero-slider">
+
+        </div> -->
+        <div class="about-us">
+            <div class="container">
+                <p class="text-center text-white">WHO WE ARE</p>
+                <h1 class="text-center text-white pb-5 fs-1">Hello & Welcome!</h1>
+                <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum
+                    dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget,
+                    elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat
+                    volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
+                <p class="text-white">There are many variations of passages of Lorem Ipsum available, but the majority
+                    have suffered alteration in some form, by injected humour, or randomised words which don't look even
+                    slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                    isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                    Internet tend to repeat predefined chunks as necessary, making this the first true generator on the
+                    Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence
+                    structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
+                    always free from repetition, injected humour, or non-characteristic words etc.</p>
+            </div>
+        </div>
+
+        <div class="how-to-order-online">
+            <div class="container">
+                <p class="text-center text-white ">ONLY 4 STEPS</p>
+                <h1 class="text-center text-white pb-5 fs-1">How to Order Online</h1>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <img src="/images/icon/shopping.png">
+                        <h3 class="text-white">Add Items to Your Cart</h3>
+                        <p class="text-white">Select preferred meal from our menu
+                            and to the delivery cart.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="/images/icon/checkout.png">
+                        <h3 class="text-white">Checkout Online</h3>
+                        <p class="text-white">Login or register and place the order by
+                            easy paying online.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="/images/icon/tracking.png">
+                        <h3 class="text-white">Your Order is On Its Way</h3>
+                        <p class="text-white">Once we get the paid order we will pre-
+                            pare it and deliver to your door.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="/images/icon/baby-plate.png">
+                        <h3 class="text-white">Enjoy Your Meal</h3>
+                        <p class="text-white">Just relax and enjoy your meal at the
+                            comfor of your home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <div class="container">
+                <span class="text">FROM THE KITCHEN</span>
+                <h1>Explore Our Menu</h1>
+                <ul class="nav nav-pills mb-3" id="menu-pills-tab" role="tablist">
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
+                            aria-selected="true">All</a>
+                    </li>
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Starters</a>
+                    </li>
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Soups & Salads</a>
+                    </li>
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Steaks</a>
+                    </li>
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Side Dishes</a>
+                    </li>
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Desserts</a>
+                    </li>
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Drinks</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="owl-carousel owl-theme">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <img src="https://velikorodnov.com/html/steakbreak/images/320x232_img1.jpg"
+                                        class="card-img-top" alt="...">
+                                    <h5 class="card-title">Onion Rings</h5>
+                                    <span>4 oz | 420 Kcl</span>
+                                    <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                        estragon rouile</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between">
+                                        <div><span class="fw-bold">₹ 500.00</span></div>
+                                        <div>
+                                            <span class="add-to-cart">Add to cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <img src="https://velikorodnov.com/html/steakbreak/images/320x232_img1.jpg"
+                                        class="card-img-top" alt="...">
+                                    <h5 class="card-title">Onion Rings</h5>
+                                    <span>4 oz | 420 Kcl</span>
+                                    <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                        estragon rouile</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between">
+                                        <div><span class="fw-bold">₹ 500.00</span></div>
+                                        <div>
+                                            <span class="add-to-cart">Add to cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <img src="https://velikorodnov.com/html/steakbreak/images/320x232_img1.jpg"
+                                        class="card-img-top" alt="...">
+                                    <h5 class="card-title">Onion Rings</h5>
+                                    <span>4 oz | 420 Kcl</span>
+                                    <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                        estragon rouile</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between">
+                                        <div><span class="fw-bold">₹ 500.00</span></div>
+                                        <div>
+                                            <span class="add-to-cart">Add to cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <img src="https://velikorodnov.com/html/steakbreak/images/320x232_img1.jpg"
+                                        class="card-img-top" alt="...">
+                                    <h5 class="card-title">Onion Rings</h5>
+                                    <span>4 oz | 420 Kcl</span>
+                                    <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                        estragon rouile</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between">
+                                        <div><span class="fw-bold">₹ 500.00</span></div>
+                                        <div>
+                                            <span class="add-to-cart">Add to cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <img src="https://velikorodnov.com/html/steakbreak/images/320x232_img1.jpg"
+                                        class="card-img-top" alt="...">
+                                    <h5 class="card-title">Onion Rings</h5>
+                                    <span>4 oz | 420 Kcl</span>
+                                    <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                        estragon rouile</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between">
+                                        <div><span class="fw-bold">₹ 500.00</span></div>
+                                        <div>
+                                            <span class="add-to-cart">Add to cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <img src="https://velikorodnov.com/html/steakbreak/images/320x232_img1.jpg"
+                                        class="card-img-top" alt="...">
+                                    <h5 class="card-title">Onion Rings</h5>
+                                    <span>4 oz | 420 Kcl</span>
+                                    <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                        estragon rouile</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between">
+                                        <div><span class="fw-bold">₹ 500.00</span></div>
+                                        <div>
+                                            <span class="add-to-cart">Add to cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <img src="https://velikorodnov.com/html/steakbreak/images/320x232_img1.jpg"
+                                        class="card-img-top" alt="...">
+                                    <h5 class="card-title">Onion Rings</h5>
+                                    <span>4 oz | 420 Kcl</span>
+                                    <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                        estragon rouile</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between">
+                                        <div><span class="fw-bold">₹ 500.00</span></div>
+                                        <div>
+                                            <span class="add-to-cart">Add to cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img1.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img2.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img3.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img4.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact-form">
+                            <div class="form">
+                                <h1>Contact Us</h1>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="dyt-btn w-100">Make a Reservation</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <h1>Our Location</h1>
+                        <iframe class="map-frame"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4600.603274477363!2d73.00666731531305!3d19.071416757071482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795008f9d38c1%3A0x341509bb64f446a6!2sDynamite%20Technology%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1679262221702!5m2!1sen!2sin"
+                            width="100%" height="485" style="border:5;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="article">
+            <div class="container">
+                <div class="content">
+                    <h1 class="pb-3">We Offer You an Unforgettable Dining Experience</h1>
+                    <button class="dyt-btn">Book a Table</button>
+                    <button class="dyt-btn">Order Online</button>
+                </div>
+            </div>
+        </article>
+            <!-- HEADER START -->
+             <%- include('partials/footer.ejs'); %>
+            <!-- HEADER END -->
+    </main>
+
+    <script src="/js/jquery-3.6.4.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                navText: ["<div class='nav-btn prev-slide'></div>",
+                    "<div class='nav-btn next-slide'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

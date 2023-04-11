@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restorant Application</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.theme.default.min.css"> -->
+</head>
+<body>
+    <!-- HEADER START -->
+        <%- include('partials/header.ejs'); %>
+    <!-- HEADER END -->
+    <main class="main-content" style="padding-top:50px;">
+        <div class="menu-section" >
+            <div class="container">
+                <span class="text">BLOG</span>
+                <h1>Our Blog</h1>
+                <div class="row">
+                    <%for(let i = 1; i<=52; i++){%>
+                    <div class="col-md-4 col-sm-4 col-xl-4 mb-3">
+                        <div class="card product-card ">
+                            <div class="card-body">
+                                <img src="https://velikorodnov.com/html/steakbreak/images/470x472_img2.jpg"
+                                    class="card-img-top" alt="...">
+                                <h5 class="card-title">Onion Rings</h5>
+                                <span>4 oz | 420 Kcl</span>
+                                <p class="card-text">Marbled vegetables, saffron, pernod, wakame sponge,
+                                    estragon rouile</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-between">
+                                    <div><span class="fw-bold"><%- new Date().toDateString()%></span></div>
+                                    <div>
+                                        <span class="add-to-cart">Read More</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img1.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img2.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img3.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="../images/346x344_img4.jpg" class="img-responsive w-100 overlay-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="article">
+            <div class="container">
+                <div class="content">
+                    <h3 class="pb-3">We Offer You an Unforgettable Dining Experience</h3>
+                </div>
+            </div>
+        </article>
+           <!-- HEADER START -->
+           <%- include('partials/footer.ejs'); %>
+           <!-- HEADER END -->
+    </main>
+
+    <script src="/js/jquery-3.6.4.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                navText: ["<div class='nav-btn prev-slide'></div>",
+                    "<div class='nav-btn next-slide'></div>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -29,39 +29,33 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <div class="user">
                                 <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="name-of-institute"
+                                            placeholder="Name of institute">
                                     </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
-                                    </div>
+                       
                                 </div>
-                                <!-- <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Phone Number">
-                                </div> -->
+           
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                    <input type="email" class="form-control form-control-user" id="email-of-institute"
+                                        placeholder="Email Address of institute">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user"
-                                            id="otp" placeholder="Enter Otp">
+                                            id="phone-of-institute" placeholder="Phone number of institute">
                                     </div>
-                                    <!-- <div class="col-sm-6">
+                                    <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div> -->
+                                            id="password-of-institute" placeholder="Password">
+                                    </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <button  class="btn btn-primary btn-user btn-block" id="institute-registration">
                                     Register Account
-                                </a>
-                            </form>
+                                </button>
+                            </div>
                             <hr>
                             <div class="text-center">
                                 <a class="small" href="/forgot-password">Forgot Password?</a>
@@ -84,6 +78,32 @@
     <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#institute-registration").on('click', function(){
+                let name_of_institute = $("#name-of-institute").val()
+                let password_of_institute = $("#password-of-institute").val()
+                let email_of_institute = $("#email-of-institute").val()
+                let phone_of_institute = $("#phone-of-institute").val()
+
+                
+                $.ajax({
+                type: "POST",
+                url: "/admin/login",
+                data: {
+                    name_of_institute: name_of_institute,
+                    password_of_institute: password_of_institute,
+                    email_of_institute: email_of_institute,
+                    phone_of_institute: phone_of_institute
+                },
+                success:  (response) => {
+                    console.log('Response:::::::', response)
+                },
+                dataType: 'JSON'
+                });
+            })
+        })
+    </script>
 </body>
 
 </html>

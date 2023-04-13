@@ -7,5 +7,5 @@ const login = require('../../controllers/admin/loginController')
 router.get('/dashboard', admin.dashboard)
 router.get('/create-question', admin.getMenuPage)
 router.post('/upload-menu', admin.uploadMenu)
-router.post('/login', login.login)
+router.post('/register', login.register)
 module.exports = router;

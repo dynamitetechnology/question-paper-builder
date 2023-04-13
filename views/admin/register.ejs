@@ -37,7 +37,7 @@
                                     </div>
                        
                                 </div>
-           
+        
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="email-of-institute"
                                         placeholder="Email Address of institute">
@@ -68,7 +68,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript-->
@@ -78,6 +77,7 @@
     <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         $(document).ready(function(){
             $("#institute-registration").on('click', function(){
@@ -85,11 +85,9 @@
                 let password_of_institute = $("#password-of-institute").val()
                 let email_of_institute = $("#email-of-institute").val()
                 let phone_of_institute = $("#phone-of-institute").val()
-
-                
                 $.ajax({
                 type: "POST",
-                url: "/admin/login",
+                url: "/admin/register",
                 data: {
                     name_of_institute: name_of_institute,
                     password_of_institute: password_of_institute,
@@ -97,7 +95,19 @@
                     phone_of_institute: phone_of_institute
                 },
                 success:  (response) => {
-                    console.log('Response:::::::', response)
+                    console.log('Response:::::::', response.data.message)
+                    if(response.data.status == "200"){
+                        swal({
+                            title: "Wow!",
+                            text: response.data.message,
+                            type: "success"
+                        }).then(function() {
+                            window.location = "/login";
+                        });
+                    }else{
+                        swal("Hi!", response.data.message);
+                    }
+                    
                 },
                 dataType: 'JSON'
                 });

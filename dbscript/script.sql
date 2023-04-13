@@ -41,17 +41,19 @@ AS $procedure$
     cast(t->>'password_of_institute' AS varchar(255)) password_of_institute
     from jsonb(_json) as t;
     
-   
    if ((select count(*) as count  from temp_users tu join develop.users u on tu.institute_email = u.institute_email) = 0) then
    insert into develop.users(institute_name, institute_email, institute_phone, password)
    select institute_name, institute_email, institute_phone, password from temp_users;
-	 output_json:= '{"status":200, "message":"User inserted successfully"}';
+	 output_json:= '{"status":200, "message":"account has been created sucessfully"}';
 	else
 	 output_json:= '{"status":409, "message":"User already exists"}';
 	END if;
 
  END
 $procedure$;
+
+
+
 
 call develop.users('{
   "name_of_institute": "Dynamite",
@@ -61,4 +63,5 @@ call develop.users('{
 }','{}');
 
 select * from temp_users
+
 select * from develop.users

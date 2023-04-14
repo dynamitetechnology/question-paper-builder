@@ -1,14 +1,22 @@
+const Role =  require('../../modal/Role')
+
 module.exports = {
     indexPage: (req, res, next) => {
         res.render('index');
     },
 
     loginPage: (req, res, next) => {
-        res.render('admin/login');
+        res.render('dashboard/login');
     },
 
     register: (req, res, next) => {
-        res.render('admin/register');
+        Role.findAllRole().then(result=>{
+            console.log('result::::::::::::', result.rows)
+            res.render('dashboard/register',{
+                roles: result.rows
+            });
+        })
+        
     },
 
     menu: (req, res, next) => {

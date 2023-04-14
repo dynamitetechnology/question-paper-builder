@@ -33,19 +33,29 @@
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="name-of-institute"
-                                            placeholder="Name of institute">
+                                            placeholder="Name">
                                     </div>
                        
                                 </div>
         
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="email-of-institute"
-                                        placeholder="Email Address of institute">
+                                        placeholder="Email">
                                 </div>
+
+                                <div class="form-group">
+                                    <select class="form-select form-control-user w-100" id="role">
+                                        <option value="">Select Your Role</option>
+                                        <%for(let role of roles){%>
+                                        <option value="<%-role.id%>"><%-role.name%></option>
+                                        <%}%>
+                                    </select>
+                                </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user"
-                                            id="phone-of-institute" placeholder="Phone number of institute">
+                                            id="phone-of-institute" placeholder="Phone">
                                     </div>
                                     <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
@@ -85,14 +95,16 @@
                 let password_of_institute = $("#password-of-institute").val()
                 let email_of_institute = $("#email-of-institute").val()
                 let phone_of_institute = $("#phone-of-institute").val()
+                let role = $("#role").val()
                 $.ajax({
                 type: "POST",
-                url: "/admin/register",
+                url: "/register",
                 data: {
-                    name_of_institute: name_of_institute,
-                    password_of_institute: password_of_institute,
-                    email_of_institute: email_of_institute,
-                    phone_of_institute: phone_of_institute
+                    name: name_of_institute,
+                    password: password_of_institute,
+                    email: email_of_institute,
+                    phone: phone_of_institute,
+                    role_id: role
                 },
                 success:  (response) => {
                     console.log('Response:::::::', response.data.message)
@@ -102,7 +114,7 @@
                             text: response.data.message,
                             type: "success"
                         }).then(function() {
-                            window.location = "/login";
+                            window.location = "/signin";
                         });
                     }else{
                         swal("Hi!", response.data.message);

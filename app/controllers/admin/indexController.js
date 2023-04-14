@@ -2,12 +2,12 @@ const fs = require('fs');
 const csv = require('fast-csv');
 module.exports = {
     dashboard: (req, res, next) => {
-        res.render('admin/dashboard')
+        res.render('dashboard/dashboard')
     },
 
     getMenuPage: (req, res, next) => {
         //  console.log('REQ:::::::', res.locals)
-        res.render('admin/upload-menu')
+        res.render('dashboard/upload-menu')
     },
 
     uploadMenu: (req, res, next) => {

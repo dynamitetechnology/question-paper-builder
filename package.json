@@ -26,6 +26,7 @@
     "fast-csv": "^4.3.6",
     "jsonwebtoken": "^9.0.0",
     "pg": "^8.10.0",
-    "read-excel-file": "^5.6.1"
+    "read-excel-file": "^5.6.1",
+    "redis": "^4.6.5"
   }
 }

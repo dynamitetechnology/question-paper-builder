@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/images/favicon.svg"
+      type="image/x-icon"
+    />
+    <title>Sign Up | PlainAdmin Demo</title>
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/lineicons.css" />
+    <link rel="stylesheet" href="/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="/css/fullcalendar.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+
+
+    <section class="signin-section  pt-40  pr-40 pl-40">
+        <div class="container-fluid">
+        <div class="row g-0 auth-row">
+            <div class="col-lg-6">
+              <div class="auth-cover-wrapper bg-primary-100">
+                <div class="auth-cover">
+                  <div class="title text-center">
+                    <h1 class="text-primary mb-10">Get Started</h1>
+                    <p class="text-medium">
+                      Start creating the best possible user experience
+                      <br class="d-sm-block" />
+                      for you customers.
+                    </p>
+                  </div>
+                  <div class="cover-image">
+                    <img src="/images/auth/signin-image.svg" alt="" />
+                  </div>
+                  <div class="shape-image">
+                    <img src="/images/auth/shape.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6">
+              <div class="signup-wrapper">
+                <div class="form-wrapper">
+                  <h6 class="mb-15">Sign Up</h6>
+                  <!-- <p class="text-sm mb-25">
+                    Start creating the best possible user experience for you
+                    customers.
+                  </p> -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="input-style-1">
+                          <label>Name</label>
+                          <input type="text" placeholder="Name" id="name-of-institute"/>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="input-style-1">
+                          <label>Email</label>
+                          <input type="email" placeholder="Email" id="email-of-institute"/>
+                        </div>
+                      </div>
+
+                      <!-- end col -->
+                      <div class="col-12">
+                        <div class="input-style-1">
+                          <label>Phone</label>
+                          <input type="text" placeholder="Phone" id="phone-of-institute"/>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="input-style-1">
+                          <label>Select Your Role</label>
+                          <select class="form-select" id="role">
+                            <option value="">Select Your Role</option>
+                                <%for(let role of roles){%>
+                                    <option value="<%-role.id%>"><%-role.name%></option>
+                                <%}%>
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <!-- end col -->
+                      <div class="col-12">
+                        <div class="input-style-1">
+                          <label>Password</label>
+                          <input type="password" placeholder="Password" id="password-of-institute"/>
+                        </div>
+                      </div>
+ 
+                      <div class="col-12">
+                        <div
+                          class="button-group d-flex justify-content-center flex-wrap">
+                          <button class="main-btn primary-btn btn-hover w-100 text-center" id="registration">
+                            Sign Up
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+               
+                  <div class="singup-option pt-40">       
+                    <p class="text-sm text-medium text-dark text-center">
+                      Already have an account? <a href="/signin" class="text-decoration-none">Sign In</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+      </section>
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="/js/jquery-3.6.4.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#registration").on('click', function(){
+                let name_of_institute = $("#name-of-institute").val()
+                let password_of_institute = $("#password-of-institute").val()
+                let email_of_institute = $("#email-of-institute").val()
+                let phone_of_institute = $("#phone-of-institute").val()
+                let role = $("#role").val()
+                $.ajax({
+                type: "POST",
+                url: "/signup",
+                data: {
+                    name: name_of_institute,
+                    password: password_of_institute,
+                    email: email_of_institute,
+                    phone: phone_of_institute,
+                    role_id: role
+                },
+                success:  (response) => {
+                    console.log('Response:::::::', response.data.message)
+                    if(response.data.status == "200"){
+                        swal({
+                            title: "Wow!",
+                            text: response.data.message,
+                            type: "success"
+                        }).then(function() {
+                            window.location = "/signin";
+                        });
+                    }else{
+                        swal("Hi!", response.data.message);
+                    }
+                    
+                },
+                dataType: 'JSON'
+                });
+            })
+        })
+    </script>
+  </body>
+</html>

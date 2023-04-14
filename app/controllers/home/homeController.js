@@ -6,13 +6,13 @@ module.exports = {
     },
 
     loginPage: (req, res, next) => {
-        res.render('dashboard/login');
+        res.render('dashboard/signin');
     },
 
     register: (req, res, next) => {
         Role.findAllRole().then(result=>{
             console.log('result::::::::::::', result.rows)
-            res.render('dashboard/register',{
+            res.render('dashboard/signup',{
                 roles: result.rows
             });
         })

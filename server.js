@@ -47,13 +47,13 @@ app.use('/admin', admin);
   console.clear();
   // console.log('redisClient:::::::::::', redisclient)
   // await redisclient.connect();
- redisClient.connect(
-    process.env.REDIS_PORT,
-    process.env.REDIS_HOST,
-    process.env.REDIS_PASS
-  ).then(result=>{
-    console.log('RESULT:::::::::', result)
-  });
+//  redisClient.connect(
+//     process.env.REDIS_PORT,
+//     process.env.REDIS_HOST,
+//     process.env.REDIS_PASS
+//   ).then(result=>{
+//     console.log('RESULT:::::::::', result)
+//   });
 
   app.listen(process.env.SERVER_PORT, function () {
     console.log("Node app is listening at http://localhost:%s", process.env.SERVER_PORT || 5000);

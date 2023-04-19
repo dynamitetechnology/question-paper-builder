@@ -1,13 +1,24 @@
-const { createClient, defineScript } = require('redis');
+var express = require('express');
+var redis = require("redis");
+var session = require('express-session');
+var redisStore = require('connect-redis');//(session);
+var parser = require('body-parser');
+var RedisClient= redis.createClient();
 
-const client = createClient({
+var app = express();
 
+app.use(session({
+    secret: 'mysecret',
+    //store: new redisStore({client: RedisClient,ttl : 260}),
+    saveUninitialized: false,
+    resave: false,
+    cookie: { secure: true }
+}));
+
+RedisClient.on('error', function(err) {
+    console.log('Redis error: ' + err);
 });
 
-
-(async function () {
-    await client.connect();
-
-    await client.set('key', '1');
-    await client.add('key', 2); // 3
-  })();
+RedisClient.on("ready",function () {
+    console.log("Redis is ready");
+});

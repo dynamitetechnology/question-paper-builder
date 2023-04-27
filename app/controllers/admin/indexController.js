@@ -39,5 +39,9 @@ module.exports = {
                     })
                 });
         })
+    },
+
+    createHeader:(req, res, next)=>{
+        res.render('dashboard/create-header')
     }
 }

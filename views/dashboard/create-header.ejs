@@ -1,0 +1,135 @@
+<%- include('./partials/head.ejs'); %>
+</head>
+<body>
+    <!-- ======== sidebar-nav start =========== -->
+    <%- include('./partials/sidebar.ejs'); %>
+    <div class="overlay"></div>
+    <!-- ======== sidebar-nav end =========== -->
+
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <!-- ========== header start ========== -->
+      <%- include('./partials/header.ejs'); %>
+      <!-- ========== header end ========== -->
+
+      <!-- ========== section start ========== -->
+      <section class="section">
+        <div class="container-fluid">
+          <!-- ========== title-wrapper start ========== -->
+          <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="title mb-30">
+                  <h2><%-locals.urlText%></h2>
+                </div>
+              </div>
+              <!-- end col -->
+              <div class="col-md-6">
+                <div class="breadcrumb-wrapper mb-30">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="<%-locals.base_url%>"><%-locals.base_url%></a>
+                      </li>
+                      <!-- <li class="breadcrumb-item active" aria-current="page">
+                        eCommerce
+                      </li> -->
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+              <!-- end col -->
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- ========== title-wrapper end ========== -->
+
+
+          <div class="card rounded-0">
+            <div class="card-header">
+              Filter
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <label>Select Subject</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label>Select Subject</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label>Select Subject</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- End Row -->
+          <div class="card mt-2  rounded-0">
+            <div class="card-header">
+              Create Question
+            </div>
+            <div class="card-body">
+             <div class="row">
+              <div class="col-md-9">
+                <div class="mt-3">
+                  <label>Enter Question</label>
+                  <div id="editor1" name="editor1"></div>
+                </div>
+                <div class="mt-3">
+                  <label>Enter Answer</label>
+                  <div id="editor2" name="editor2"></div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Marks</label>
+                  <input type="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary rounded-0" type="button">Save As Draft</button>
+                  <button class="btn btn-primary rounded-0" type="button">Final Submit</button>
+                </div>
+              </div>
+             </div>
+            </div>
+          </div>
+      </section>
+      <!-- ========== section end ========== -->
+
+      <!-- ========== footer start =========== -->
+      <%- include('./partials/footer.ejs'); %>
+      <!-- ========== footer end =========== -->
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+
+    <!-- ========= All Javascript files linkup ======== -->
+    <%- include('./partials/footerlink.ejs'); %>
+
+    <!-- <script src="/js/ckeditor.js"></script> -->
+    <script>
+   $(document).ready(function(){
+
+   })
+    </script>
+  </body>
+</html>

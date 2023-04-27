@@ -34,9 +34,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(function(req, res, next){
   res.locals.base_url = req.originalUrl
+  res.locals.urlText = req.originalUrl.split('/')[2].replace('-',' ')
   // console.log('REQ SERCER:::::::::::', req.body)
   // res.locals.path = req.path
-  //  console.log('REQ SERCER:::::::::::', req.originalUrl)
+    // console.log('REQ SERCER:::::::::::', req.originalUrl.split('/')[2].replace('-',' '))
   next();
 })
 
